@@ -3,9 +3,9 @@
 
 class Shape{
 protected:
-    double x, y;
+    double x, y, z;
 public:
-    Shape(double x, double y): x(x), y(y){}
+    Shape(double x, double y, double z): x(x), y(y), z(z){}
 };
 
 #endif // SHAPE_HH_
