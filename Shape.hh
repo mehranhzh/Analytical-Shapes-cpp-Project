@@ -10,6 +10,7 @@ public:
     void setX(double x);
     void setY(double y);
     void setZ(double z);
+    void moveTo(double x, double y, double z);
     virtual bool isInside(double x, double y, double z) const = 0 //pure virtual
     virtual void draw();
 
