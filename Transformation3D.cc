@@ -1,13 +1,13 @@
 #include "Transformation3D.hh"
 
-void Translation(){
+Transformation3D::void Translation(){
 
 }
 
-void Rotation(){
+Transformation3D::void Rotation(){
 
 }
 
-void Scale(){
+Transformation3D::void Scale(){
 
 }
