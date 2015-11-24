@@ -3,6 +3,7 @@
 using namespace std;
 
 Shape::Shape(double nx, double ny, double nz){
+    moveTo(nx, ny, nz);
 }
 
 //move to the position
