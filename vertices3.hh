@@ -20,19 +20,13 @@ public:
         x = v.x; y = v.y; z = v.z;
         return *this;
     }
-    vertex operator -(const vertex& v){
-        return vertex(x - v.x, y - v.y, z - v.z);
-    }
-    vertex operator +(const vertex& v){
-        return vertex(x + v.x, y + v.y, z + v.z);
-    }
-    vertex operator /(double a){
+    vertex operator /(double a) const{
         return vertex(x / a, y / a, z / a);
     }
-    vertex operator *(double a){
+    vertex operator *(double a) const {
         return vertex(x * a, y * a, z * a);
     }
-    double normalize() const {
+    double abs() const {
         return sqrt(x * x + y * y + z * z);
     }
     friend vertex operator -(const vetex& v1, const vertex& v2){
