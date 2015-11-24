@@ -1,10 +1,10 @@
 #ifndef TRIANGLE_HH_
 #define TRIANGLE_HH_
 
-#include "Shape.hh"
+#include "vertices3.hh"
+#include "planes.hh"
 
-class Triangle: public Shape{
+class Triangle{
 
 };
-
 #endif // TRIANGLE_HH_

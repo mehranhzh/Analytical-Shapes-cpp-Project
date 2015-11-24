@@ -2,10 +2,9 @@
 
 Cylinder::Cylinder(double h = 1, double r1 = 0, double r2 = 1):
     r1(r1), h(h), r2(r2){}
+
 void Cylinder::getSTL(){
     ofstream file("Cylinder.stl");
-    double normal[3];
-    double vertex[3];
     file << "solid Cylinder" << '\n';
 
     for(int i = 1; i <= 32; i++){
@@ -14,7 +13,12 @@ void Cylinder::getSTL(){
         file << "endloop" << '\n';
         file << "endfacet" << '\n';
     }
-
+    for(int i = 1; i <= 28; i++){
+        file << "facet normal" << ' ' << '\n';
+        file << "outer loop" << '\n';
+        file << "endloop" << '\n';
+        file << "endfacet" << '\n';
+    }
     file << "endsolid Cylinder" << '\n';
 }
 double Cylinder::getVolume(){
