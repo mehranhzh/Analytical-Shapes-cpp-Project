@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Shape.hh"
 
 using namespace std;
