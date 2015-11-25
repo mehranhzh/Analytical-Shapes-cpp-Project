@@ -2,16 +2,16 @@
 #define SHAPE_HH_
 
 class Shape{
-protected:
+private:
     double x, y, z;
 public:
-    Shape(double x, double y, double z): x(x), y(y), z(z){}
-    int getX(), getY(), getZ();
-    void setX(double x);
-    void setY(double y);
-    void setZ(double z);
-    void moveTo(double x, double y, double z);
-    virtual bool isInside(double x, double y, double z) const = 0 //pure virtual
+    Shape(double x1, double y1, double z1);
+    double getX(), getY(), getZ();
+    void setX(double x1);
+    void setY(double y1);
+    void setZ(double z1);
+    void moveTo(double x1, double y1, double z1);
+    //virtual bool isInside(double x, double y, double z) const = 0 //pure virtual
     virtual void draw();
 
 };
