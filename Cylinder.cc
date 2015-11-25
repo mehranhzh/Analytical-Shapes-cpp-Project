@@ -1,4 +1,4 @@
-
+#include "Shape.hh"
 #include "Cylinder.hh"
 
 Cylinder::Cylinder(double h = 1, double r1 = 0, double r2 = 1):
