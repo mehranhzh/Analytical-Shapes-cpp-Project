@@ -1,8 +1,6 @@
 #include <iostream>
 #include "Shape.hh"
 
-using namespace std;
-
 Shape::Shape(double x1, double y1, double z1){}
 
 double Shape::getX() { return x; }

@@ -1,4 +1,4 @@
-#include "Shape.hh"
+
 #include "Cube.hh"
 
 Cube(double a = 1, double b = 1, double c = 1):
