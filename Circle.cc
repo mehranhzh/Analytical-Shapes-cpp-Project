@@ -1,7 +1,7 @@
 #include "Shape.hh"
 #include "Circle.hh"
 
-Circle::Circle(double x1, double y1, double r1) : Shape(x1, y1){
+Circle::Circle(double x1, double y1, double z1, double r1) : Shape(x1, y1, z1){
     setR(r1);
 }
 

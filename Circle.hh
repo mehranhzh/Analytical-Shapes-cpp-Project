@@ -5,7 +5,7 @@ class Circle : public Shape{
 private:
     double r;
 public:
-    Circle(double x1, double y1, double r1);
+    Circle(double x1, double y1, double z1, double r1);
     double getR();
     void setR(){double r1};
     void draw();
