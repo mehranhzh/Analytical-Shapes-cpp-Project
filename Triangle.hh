@@ -1,8 +1,6 @@
 #ifndef TRIANGLE_HH_
 #define TRIANGLE_HH_
 
-#include "Edge.hh"
-
 class Triangle{
 private:
     Point p0_, p1_, p2_;
@@ -17,7 +15,7 @@ public:
 
     Point Normal() const {
         Point cross = (p0_-p1_).Cross(p2_-p1_);
-        return cross.abs();
+        return cross.Normalize();
     }
 
 };
