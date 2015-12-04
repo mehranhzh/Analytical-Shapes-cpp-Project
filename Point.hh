@@ -1,3 +1,8 @@
+//Author: Yu Hongshen
+//For EE-810 Group Project
+
+//This is the Point class for every shapes.
+
 #ifndef POINT_HH_
 #define POINT_HH_
 
@@ -8,33 +13,43 @@ private:
     double x_, y_, z_;
 
 public:
+    //constructor
     Point(): x_(0), y_(0), z_(0){}
     Point(double x, double y, double z): x_(x), y_(y), z_(z){}
     ~Point(){}
 
+    //accessors
     double x() const {return x_;}
     double y() const {return y_;}
     double z() const {return x_;}
 
+    //set values
     void set_x(double val){x_ = val;}
     void set_y(double val){y_ = val;}
     void set_z(double val){z_ = val;}
-    void setxyz(double x, double y, double z){x_ = x; y_ = y; z_ = z}
+    void setxyz(double x, double y, double z){x_ = x; y_ = y; z_ = z;}
 
+    //some member functions
     void add(const Point& other){
-        x_ += other.x_; y_ += other.y_; z += other.z_;
+        x_ += other.x_;
+        y_ += other.y_;
+        z_ += other.z_;
     }
     void sub(const Point& other){
-        x_ -= other.x_; y_ -= other.y_; z -= other.z_;
+        x_ -= other.x_;
+        y_ -= other.y_;
+        z_ -= other.z_;
     }
 
+    //scale
     void scale_x(double s){x_ *= s;}
     void scale_y(double s){y_ *= s;}
     void scale_z(double s){z_ *= s;}
     void scale(double s){scale_x(s); scale_y(s); scale_z(s);}
 
+    //rotate function, derived from rotation transform matrix in computer graphics
     void RotateAround(const Point& vec, double angle_radians){
-        Point u = vec.Normalize();
+        Point u = vec.Normalized();
         double c = cos(angle_radians);
         double i_c = 1 - c;
         double s = sin(angle_radians);
@@ -50,6 +65,7 @@ public:
         return copyPoint;
     }
 
+    //some operator overloading
     Point& operator =(const Point& other){
         x_ = other.x_; y_ = other.y_; z_ = other.z_;
         return *this;
@@ -80,24 +96,49 @@ public:
     }
 
     //comparison
-    bool operator <(const Point& other) const;
-    bool operator <=(const Point& other) const;
-    bool operator >(const Point& other) const;
-    bool operator >=(const Point& other) const;
-    bool operator ==(const Point& other) const;
-    bool operator !=(const Point& other) const;
+    bool operator <(const Point& other) const{
+        return (x() != other.x() ? x() < other.x():
+               (y() != other.y() ? y() < other.y():
+               (z() < other.z())));
+    }
+    bool operator <=(const Point& other) const{
+        return (x() != other.x() ? x() < other.x():
+               (y() != other.y() ? y() < other.y():
+               (z() <= other.z())));
+    }
+    bool operator >(const Point& other) const{
+        return (x() != other.x() ? x() > other.x():
+               (y() != other.y() ? y() > other.y():
+               (z() > other.z())));
+    }
+    bool operator >=(const Point& other) const{
+        return (x() != other.x() ? x() > other.x():
+               (y() != other.y() ? y() > other.y():
+               (z() >= other.z())));
+    }
+    bool operator ==(const Point& other) const{
+        return x() == other.x() && y() == other.y() && z() == other.z();
+    }
+    bool operator !=(const Point& other) const {
+        return x() != other.x() || y() != other.y() || z() != other.z();
+    }
 
     double DistanceFrom(const Point& other) const {
-        return sqrt(x()*other.x() + y()*otehr.y(), z()*other.z());
+        return sqrt(x()*other.x() + y()*other.y() + z()*other.z());
     }
     double magnitude() const {
-        return sqrt(x()*x() + y()*y(), z()*z());
+        return sqrt(x()*x() + y()*y() + z()*z());
     }
     void Normalize(){
         double m = magnitude();
         if(m != 0){
             *this = *this / m;
         }
+    }
+    Point Normalized() const {
+        Point copy_ = *this;
+        copy_.Normalize();
+        return copy_;
     }
 };
 
