@@ -1,15 +1,14 @@
-#include <iostream>
-#include "Circle.hh"
+#include "Point.hh"
 #include "Cube.hh"
 #include "Cylinder.hh"
-#include "Parameter.hh"
-#include "Parameter3D.hh"
-#include "Polygon.hh"
 #include "Sphere.hh"
-#include "Transformation2D.hh"
-#include "Transformation3D.hh"
+#include "stlWriter.hh"
+#include "GeometryTransform.hh"
+#include "Triangle.hh"
+#include <iostream>
 
-using namespace std;
+double PI = 3.14159265;
+
 int main(int argc, char** argv){
 
 }
