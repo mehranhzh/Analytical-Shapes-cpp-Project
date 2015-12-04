@@ -16,8 +16,8 @@ public:
     ~Point(){}
 
     //accessors
-    double Getx() const {return x_;}
-    double Gety() const {return y_;}
+    double x() const {return x_;}
+    double y() const {return y_;}
 
     //set values
     void set_x(double val){x_ = val;}
