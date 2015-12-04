@@ -1,3 +1,7 @@
+//Author: Yu Hongshen
+//this class is to create triangles, the vertices of triangles
+//come from the triangulation of every shapes.
+
 #ifndef TRIANGLE_HH_
 #define TRIANGLE_HH_
 
@@ -15,9 +19,22 @@ public:
 
     Point Normal() const {
         Point cross = (p0_-p1_).Cross(p2_-p1_);
-        return cross.Normalize();
+        return cross.Normalized();
+    }
+
+    double area() const {return (p1_-p0_).Cross(p2_-p0_).magnitude()/2;}
+
+    Triangle Normalized() const {
+    //p2->p1->p2 or p1->p2->p0 or p2->p0->p1
+        if(p0() < p1()){
+            return(p0() < p2() ? Triangle(p0(), p1(), p2()):
+                   Triangle(p2(), p0(), p1()));
+        }
+        return(p1() < p2() ? Triangle(p1(), p2(), p0()):
+                   Triangle(p2(), p0(), p1()));
     }
 
 };
 
 #endif // TRIANGLE_HH_
+
