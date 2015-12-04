@@ -85,6 +85,23 @@ public:
         return Point(x()*other.y() - other.x()*y());
     }
 
+    //comparison
+    bool operator <(const Point& other) const{
+        return (x() != other.x() ? x() < other.x():
+               (y() != other.y() ? y() < other.y()));
+    }
+    bool operator <=(const Point& other) const{
+        return (x() != other.x() ? x() < other.x():
+               (y() != other.y() ? y() < other.y()));
+    }
+    bool operator >(const Point& other) const{
+        return (x() != other.x() ? x() > other.x():
+               (y() != other.y() ? y() > other.y()));
+    }
+    bool operator >=(const Point& other) const{
+        return (x() != other.x() ? x() > other.x():
+               (y() != other.y() ? y() > other.y()));
+    }
 
     bool operator ==(const Point& other) const{
         return x() == other.x() && y() == other.y();
