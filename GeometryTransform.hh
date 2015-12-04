@@ -1,6 +1,10 @@
+//Author: Yu Hongshen
+//This is the class of transformation
+
 #ifndef GEOMETRYTRANSFORM_HH_
 #define GEOMETRYTRANSFORM_HH_
 
+//base class of all kinds of transform
 class GeometryTransform{
 public:
     GeometryTransform(){}
@@ -8,13 +12,17 @@ public:
     virtual Point Transform(const Point& input) = 0;
 };
 
+//scale transformation
 class ScaleTransform: public GeometryTransform{
 private:
     Point scale_;
 public:
+    //constructor
     ScaleTransform(const Point& scale): scale_(scale){}
     ScaleTransform(const double& s): scale_(Point(s, s, s)){}
     virtual ~ScaleTransform(){}
+
+    //calculate the coordinate of a scaled point
     virtual Point Transform(const Point& input){
         Point copy_ = input;
         copy_.scale_x(scale_.x());
@@ -24,12 +32,15 @@ public:
     }
 };
 
+//translate transformation
 class TranslateTransform: public GeometryTransform{
 private:
     Point translate_;
 public:
     TranslateTransform(const Point& translate): translate_(translate){}
     virtual ~TranslateTransform(){}
+
+    //calculate the coordinate of a translated point
     virtual Point Transform(const Point& input){
         Point copy_ = input;
         copy_.add(translate_);
@@ -37,6 +48,7 @@ public:
     }
 };
 
+//rotate transformation
 class RotateTransform: public GeometryTransform{
 private:
     Point origin_, vector_;
@@ -47,6 +59,8 @@ public:
     RotateTransform(const Point& center, const Point& vec, double radians):
         origin_(center), vector_(vec), radians_(radians){}
     virtual ~RotateTransform(){}
+
+    //calculate the coordinate of a point after its rotation
     virtual Point Transform(const Point& input){
         Point copy_ = input;
         copy_.sub(origin_); //make input into a vector
