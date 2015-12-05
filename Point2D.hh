@@ -7,7 +7,7 @@
 
 class Point{
 private:
-    double x_, y_, z_;
+    double x_, y_;
 
 public:
     //constructor
