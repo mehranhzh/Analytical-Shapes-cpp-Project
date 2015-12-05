@@ -24,6 +24,7 @@ public:
 
     double area() const {return (p1_-p0_).Cross(p2_-p0_).magnitude()/2;}
 
+    //This function is to make sure the orientation of each triangles.
     Triangle Normalized() const {
     //p2->p1->p2 or p1->p2->p0 or p2->p0->p1
         if(p0() < p1()){
