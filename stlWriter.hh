@@ -9,8 +9,17 @@
 
 #include <iostream>
 #include <fstream>
+#include <vector>
+#include "Cylinder.hh"
+#include "Cube.hh"
+#include "Sphere.hh"
+using namespace std;
 
 class stlWriter{
+private:
+    vector<Point> Point_;
+public:
+    stlWriter(vector<Point> p): Point_(p){}
 
 };
 #endif // STLWRITER_HH_
