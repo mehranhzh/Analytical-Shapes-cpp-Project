@@ -6,6 +6,7 @@
 
 #include <cmath>
 #include <fstream>
+#include <vector>
 #include "point.hh"
 using namespace std;
 
@@ -34,7 +35,9 @@ public:
     void set_h(double h) {h_ = h;}
     void set_bottomCenter(const Point& bp) {bottomCenter = bp;}
 
-
+    void Triangulation(){
+        
+    }
     double getVolume(){
         if(r1() > r2()){
             return h()*PI*((r1()-r2())*(r1()-r2())+r2()*r2());
