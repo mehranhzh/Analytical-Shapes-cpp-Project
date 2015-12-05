@@ -6,7 +6,6 @@
 
 #include <cmath>
 #include <fstream>
-#include <vector>
 #include "point.hh"
 using namespace std;
 
@@ -35,9 +34,18 @@ public:
     void set_h(double h) {h_ = h;}
     void set_bottomCenter(const Point& bp) {bottomCenter = bp;}
 
-    void Triangulation(){
-        
+    std::vector<Point> Points;
+    void Triangulate(){
+        double a = r1();
+        double b = r2();
+        double height = h();
+        double theta = PI / 180 * 20;
+        for(int i = 0; i < 20; i++){
+            Points.push_back(Point(a*cos(i*theta), a*sin(i*theta), 0));
+            Points.push_back(Point(b*cos(i*theta), b*sin(i*theta), height));
+        }
     }
+
     double getVolume(){
         if(r1() > r2()){
             return h()*PI*((r1()-r2())*(r1()-r2())+r2()*r2());
@@ -47,4 +55,3 @@ public:
 
 };
 #endif // CYLINDER_HH_1
-
