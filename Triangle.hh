@@ -46,14 +46,15 @@ public:
     Triangle operator+(const Point& offset) const {
         return Triangle(p0() + offset, p1() + offset, p2() + offset);
     }
-
+    
+    //calculate the normal vector of a triangle
     Point Normal() const {
         Point cross = (p0_-p1_).Cross(p2_-p1_);
         return cross.Normalized();
     }
 
     double area() const {return (p1_-p0_).Cross(p2_-p0_).magnitude()/2;}
-
+    
     Triangle Normalized() const {
     //p2->p1->p2 or p1->p2->p0 or p2->p0->p1
         if(p0() < p1()){
