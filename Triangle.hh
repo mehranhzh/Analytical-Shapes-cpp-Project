@@ -13,9 +13,39 @@ public:
         p0_(p1), p1_(p1), p2_(p2){}
     ~Triangle();
 
+    //Accessors
     const Point& p0() const {return p0_;}
     const Point& p1() const {return p1_;}
     const Point& p2() const {return p2_;}
+
+    //Mutators
+    void set_p0(const Point& p) { p0_ = p; }
+    void set_p1(const Point& p) { p1_ = p; }
+    void set_p2(const Point& p) { p2_ = p; }
+
+    //Operations
+    void operator=(const Triangle& other){
+        p0_ = other.p0_;
+        p1_ = other.p1_;
+        p2_ = other.p2_;
+    }
+    bool operator<(const Triangle& other) const {
+    return (p0_ != other.p0_ ? p0_ < other.p0_ :
+           (p1_ != other.p1_ ? p1_ < other.p1_ :
+           (p2_ < other.p2_)));
+    }
+    bool operator==(const Triangle& other) const {
+        return (p0_ == other.p0_ && p1_ == other.p1_ && p2_ == other.p2_);
+    }
+    bool operator!=(const Triangle& other) const {
+        return (p0_ != other.p0_ || p1_ != other.p1_ || p2_ != other.p2_);
+    }
+    Triangle operator-(const Point& offset) const {
+        return Triangle(p0() - offset, p1() - offset, p2() - offset);
+    }
+    Triangle operator+(const Point& offset) const {
+        return Triangle(p0() + offset, p1() + offset, p2() + offset);
+    }
 
     Point Normal() const {
         Point cross = (p0_-p1_).Cross(p2_-p1_);
@@ -24,7 +54,6 @@ public:
 
     double area() const {return (p1_-p0_).Cross(p2_-p0_).magnitude()/2;}
 
-    //This function is to make sure the orientation of each triangles.
     Triangle Normalized() const {
     //p2->p1->p2 or p1->p2->p0 or p2->p0->p1
         if(p0() < p1()){
@@ -38,4 +67,3 @@ public:
 };
 
 #endif // TRIANGLE_HH_
-
