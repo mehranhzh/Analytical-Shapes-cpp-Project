@@ -9,8 +9,8 @@ class Triangle{
 private:
     Point p0_, p1_, p2_;
 public:
-    Triangle(const Point& p1, const Point& p2, const Point& p3):
-        p0_(p1), p1_(p1), p2_(p2){}
+    Triangle(const Point& p0, const Point& p1, const Point& p2):
+        p0_(p0), p1_(p1), p2_(p2){}
     ~Triangle();
 
     //Accessors
