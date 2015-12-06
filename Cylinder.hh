@@ -51,7 +51,7 @@ public:
             Points.push_back(Point(b*cos(i*theta), b*sin(i*theta), height));
         }
 
-        for(int i = 0; i < triCount; i+=2){
+        for(int i = 0; i < 2*triCount; i+=2){
             Triangles.push_back(Triangle(Points[i], Points[i+1], Points[i+2]));
             Triangles.push_back(Triangle(Points[i+1], Points[i+2], Points[i+3]));
         }
