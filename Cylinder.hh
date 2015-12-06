@@ -7,6 +7,7 @@
 #include <cmath>
 #include <fstream>
 #include "point.hh"
+#include "Triangle.hh"
 using namespace std;
 
 extern double PI;
@@ -35,15 +36,42 @@ public:
     void set_bottomCenter(const Point& bp) {bottomCenter = bp;}
 
     std::vector<Point> Points;
-    void Triangulate(){
+    std::vector<Triangle> Triangles;
+
+    void getSTLfile(){
         double a = r1();
         double b = r2();
         double height = h();
-        double theta = PI / 180 * 20;
-        for(int i = 0; i < 20; i++){
+        int perDegree = 18;
+        double theta = PI / 180 * perDegree;
+        int triCount = 360 / perDegree;
+
+        for(int i = 0; i < triCount; i++){
             Points.push_back(Point(a*cos(i*theta), a*sin(i*theta), 0));
             Points.push_back(Point(b*cos(i*theta), b*sin(i*theta), height));
         }
+
+        for(int i = 0; i < triCount; i+=2){
+            Triangles.push_back(Triangle(Points[i], Points[i+1], Points[i+2]));
+            Triangles.push_back(Triangle(Points[i+1], Points[i+2], Points[i+3]));
+        }
+
+        ofstream file("Cylinder.stl");
+        file << "solid" << ' ' << "Cylinder" << '\n';
+
+        for(int i = 0; i < Triangles.size(); i++){
+            file << "facet normal" << ' ' << Triangles[i].Normal() << '\n';
+            file << "outer loop" << '\n';
+
+            file << "vertex" << ' ' << Triangles[i].p0() << '\n';
+            file << "vertex" << ' ' << Triangles[i].p1() << '\n';
+            file << "vertex" << ' ' << Triangles[i].p2() << '\n';
+
+            file << "endloop" << '\n';
+            file << "endfacet" << '\n';
+        }
+
+        file << "endsolid" << ' ' << "Cylinder" << '\n';
     }
 
     double getVolume(){
