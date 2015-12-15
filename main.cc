@@ -1,4 +1,4 @@
-//Author:Mehran
+//Author:Mehran, Hongshen
 //Main class to run and get output
 #include "Point.hh"
 #include "Shape.hh"
