@@ -1,3 +1,5 @@
+//Author:Mehran
+//Main class to run and get output
 #include "Point.hh"
 #include "Shape.hh"
 #include "Circle.hh"
