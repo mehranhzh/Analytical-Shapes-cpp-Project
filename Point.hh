@@ -1,4 +1,4 @@
-//Author: Yu Hongshen
+//Authors: Yu Hongshen
 //For EE-810 Group Project
 
 //This is the Point class for every shapes.
@@ -7,15 +7,19 @@
 #define POINT_HH_
 
 #include <cmath>
+#include <iostream>
+#include "Shape.hh"
+using namespace std;
+double PI = 3.14159265358979323846;
 
-class Point{
+class Point {
 private:
     double x_, y_, z_;
 
 public:
     //constructor
     Point(): x_(0), y_(0), z_(0){}
-    Point(double x, double y, double z): x_(x), y_(y), z_(z){}
+    Point(double x, double y, double z=0): x_(x), y_(y), z_(z){}
     ~Point(){}
 
     //accessors
@@ -29,6 +33,8 @@ public:
     void set_z(double val){z_ = val;}
     void setxyz(double x, double y, double z){x_ = x; y_ = y; z_ = z;}
 
+    void printShapeName() const { cout << "Point: "; }
+    //void print() const { cout << "(" << x_ << "," << y_ << "," << z_ << ")" ; };
     //some member functions
     void add(const Point& other){
         x_ += other.x_;
@@ -81,6 +87,10 @@ public:
     }
     Point operator /(double s) const {
         return Point(x()/s, y()/s, z()/s);
+    }
+
+    friend ostream& operator<<(ostream& os, const Point& p){
+        return os << "(" << p.x_ << "," << p.y_ << "," << p.z_ << ")";
     }
 
     //dot product
