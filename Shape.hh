@@ -1,4 +1,3 @@
-//Author:Mehran
 //Shape class will based class of other shapes
 #ifndef SHAPE_HH_
 #define SHAPE_HH_
