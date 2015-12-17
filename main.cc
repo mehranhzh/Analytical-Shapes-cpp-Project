@@ -24,7 +24,9 @@ int main(int argc, char** argv){
     //Triangle test(Point(1, 0, 0), Point(0, 0, 0), Point(0, 1, 0));
     //std::cout << test.Normal();
 #endif
-  Point point(7, 11, 2);		    // create a point
+  Point point(7, 11, 2);            // create a point
+  Point p(22, 8);		            // create an object point
+  Circle circle(p, 3.5);    	    // create a circle
   Circle circle(22, 8, 3.5);    	// create a circle
   Rectangle rectangle(2, 8, 4, 3);  // create a rectangle
   Square square(5, 6, 10);          // create a square
