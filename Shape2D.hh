@@ -6,7 +6,7 @@
 
 class Shape2D : public Shape{
 public:
-    Shape2D(double x2, double y2) : Shape(Point(x2, y2, 0)) {};//Constructor 2D with z_=0
+    Shape2D(Point p) : Shape(p) {}//Constructor 2D with z_=0
     double getX(), getY();//get position x,y,z
     void setX(double x1);//set position x
     void setY(double y1);//set position y
