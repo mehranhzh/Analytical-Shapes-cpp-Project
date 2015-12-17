@@ -11,7 +11,7 @@ private:
 public:
     Triangle(const Point& p0, const Point& p1, const Point& p2):
         p0_(p0), p1_(p1), p2_(p2){}
-    ~Triangle();
+    ~Triangle(){};
 
     //Accessors
     const Point& p0() const {return p0_;}
@@ -24,15 +24,16 @@ public:
     void set_p2(const Point& p) { p2_ = p; }
 
     //Operations
+
     void operator=(const Triangle& other){
         p0_ = other.p0_;
         p1_ = other.p1_;
         p2_ = other.p2_;
     }
     bool operator<(const Triangle& other) const {
-    return (p0_ != other.p0_ ? p0_ < other.p0_ :
-           (p1_ != other.p1_ ? p1_ < other.p1_ :
-           (p2_ < other.p2_)));
+        return (p0_ != other.p0_ ? p0_ < other.p0_ :
+               (p1_ != other.p1_ ? p1_ < other.p1_ :
+               (p2_ < other.p2_)));
     }
     bool operator==(const Triangle& other) const {
         return (p0_ == other.p0_ && p1_ == other.p1_ && p2_ == other.p2_);
@@ -46,7 +47,7 @@ public:
     Triangle operator+(const Point& offset) const {
         return Triangle(p0() + offset, p1() + offset, p2() + offset);
     }
-    
+
     //calculate the normal vector of a triangle
     Point Normal() const {
         Point cross = (p0_-p1_).Cross(p2_-p1_);
@@ -54,7 +55,7 @@ public:
     }
 
     double area() const {return (p1_-p0_).Cross(p2_-p0_).magnitude()/2;}
-    
+
     //This function is to make sure the orientation of each triangles.
     Triangle Normalized() const {
     //p2->p1->p2 or p1->p2->p0 or p2->p0->p1

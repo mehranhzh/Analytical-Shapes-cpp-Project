@@ -10,7 +10,6 @@
 #include <iostream>
 #include "Shape.hh"
 using namespace std;
-double PI = 3.14159265358979323846;
 
 class Point {
 private:
@@ -26,7 +25,7 @@ public:
     //accessors
     double x() const {return x_;}
     double y() const {return y_;}
-    double z() const {return x_;}
+    double z() const {return z_;}
 
     //set values
     void set_x(double val){x_ = val;}
@@ -34,8 +33,10 @@ public:
     void set_z(double val){z_ = val;}
     void setxyz(double x, double y, double z){x_ = x; y_ = y; z_ = z;}
 
+
     void printShapeName() const { cout << "Point: "; }
     //void print() const { cout << "(" << x_ << "," << y_ << "," << z_ << ")" ; };
+
     //some member functions
     void add(const Point& other){
         x_ += other.x_;
@@ -90,10 +91,6 @@ public:
         return Point(x()/s, y()/s, z()/s);
     }
 
-    friend ostream& operator<<(ostream& os, const Point& p){
-        return os << "(" << p.x_ << "," << p.y_ << "," << p.z_ << ")";
-    }
-
     //dot product
     double operator *(const Point& other) const {
         return x()*other.x() + y()*other.y() + z()*other.z();
@@ -101,9 +98,9 @@ public:
 
     //cross product
     Point Cross(const Point& other) const {
-        return Point(y()*other.z() - other.y()*z(),
-                     z()*other.x() - other.z()*x(),
-                     x()*other.y() - other.x()*y());
+        return Point(y()*other.z() - z()*other.y(),
+                     z()*other.x() - x()*other.z(),
+                     x()*other.y() - y()*other.x());
     }
 
     //comparison
@@ -137,8 +134,11 @@ public:
     double DistanceFrom(const Point& other) const {
         return sqrt(x()*other.x() + y()*other.y() + z()*other.z());
     }
+    double magnitude2() const {
+        return x()*x() + y()*y() + z()*z();
+    }
     double magnitude() const {
-        return sqrt(x()*x() + y()*y() + z()*z());
+        return sqrt(magnitude2());
     }
     void Normalize(){
         double m = magnitude();
@@ -150,6 +150,10 @@ public:
         Point copy_ = *this;
         copy_.Normalize();
         return copy_;
+    }
+
+    friend ostream& operator <<(ostream& s, const Point& p){
+        return s << p.x() << ' ' << p.y() << ' ' << p.z();
     }
 };
 
