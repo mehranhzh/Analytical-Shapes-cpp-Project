@@ -19,6 +19,7 @@ private:
 public:
     //constructor
     Point(): x_(0), y_(0), z_(0){}
+    Point(double x, double y): x_(x), y_(y){ z_= 0; }
     Point(double x, double y, double z=0): x_(x), y_(y), z_(z){}
     ~Point(){}
 
