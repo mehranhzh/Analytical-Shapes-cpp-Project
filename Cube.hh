@@ -44,6 +44,8 @@ public:
 
     void Rotate(const Point&, double);
 
+    void Scale(const Point&);
+
     double getVolume(){
         return a()*b()*c();
     }

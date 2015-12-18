@@ -20,12 +20,14 @@ int main(){
     c.triangulate();
     c.getSTLfile();
 
-    //Sphere s(Point(10, 10 ,5), 10);
-    //s.triangulate();
-    //s.getSTLfile();
+    //get a sphere
+    Sphere s(Point(10, 10 ,5), 10);
+    s.triangulate();
+    s.getSTLfile();
 
     //get a cube rotates based on vector(1,0,0), 30 degrees
     Cube cube(Point(10, 5, 5), 5, 5, 5);
+    //cube.Scale(Point(2,2,2));
     cube.getPoints();
     cube.Rotate(Point(1,0,0), 30);
     cube.triangulate();

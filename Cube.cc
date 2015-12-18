@@ -57,3 +57,9 @@ void Cube::Rotate(const Point& p, double degree){
         Points[i] = R.Transform(Points[i]);
 
 }
+
+void Cube::Scale(const Point& p){
+    set_a(p.x()*a());
+    set_b(p.y()*b());
+    set_c(p.z()*c());
+}
