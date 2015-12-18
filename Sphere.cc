@@ -1,6 +1,6 @@
 #include "Sphere.hh"
 
-void Sphere::triangulate() {
+void Sphere::getPoints() {
         double a = center().x();
         double b = center().y();
         double c = center().z();
@@ -19,8 +19,11 @@ void Sphere::triangulate() {
                                        b+r*sin(j*thetaLati)*sin(i*thetaLongi),
                                        c+r*cos(j*thetaLati)));
         }
+}
 
+void Sphere::triangulate() {
         //get the vector of Triangles
+        double r = radius();
         for(int i = 0; i < 187; i++){
             if(Points[i] != Point(center().x(), center().y(), center().z()-r)){
                 Triangles.push_back(Triangle(Points[i], Points[i+1], Points[i+12]));

@@ -22,6 +22,7 @@ int main(){
 
     //get a sphere
     Sphere s(Point(10, 10 ,5), 10);
+    s.getPoints();
     s.triangulate();
     s.getSTLfile();
 

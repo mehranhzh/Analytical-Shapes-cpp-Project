@@ -41,6 +41,8 @@ public:
     std::vector<Point> Points;
     std::vector<Triangle> Triangles;
 
+    void getPoints();
+
     //this is the triangulation of a sphere, but without test
     //a more universal way to triangulate is now developing
     void triangulate();
