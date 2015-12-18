@@ -4,6 +4,8 @@
 #ifndef GEOMETRYTRANSFORM_HH_
 #define GEOMETRYTRANSFORM_HH_
 
+#include "Point.hh"
+
 //base class of all kinds of transform
 class GeometryTransform{
 public:

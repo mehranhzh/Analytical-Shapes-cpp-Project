@@ -1,6 +1,6 @@
 #include "Cube.hh"
 
-void Cube::triangulate() {
+void Cube::getPoints() {
 
     Points.push_back(Point(a()+Position().x(), Position().y(), Position().z()));
     Points.push_back(Point(a()+Position().x(), b()+Position().y(), Position().z()));
@@ -10,6 +10,10 @@ void Cube::triangulate() {
     Points.push_back(Point(a()+Position().x(), b()+Position().y(), c()+Position().z()));
     Points.push_back(Point(Position().x(), b()+Position().y(), c()+Position().z()));
     Points.push_back(Point(Position().x(), Position().y(), c()+Position().z()));
+
+}
+
+void Cube::triangulate() {
 
     Triangles.push_back(Triangle(Points[0], Points[1], Points[2]));
     Triangles.push_back(Triangle(Points[0], Points[2], Points[3]));

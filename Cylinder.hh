@@ -42,10 +42,14 @@ public:
     std::vector<Point> Points;
     std::vector<Triangle> Triangles;
 
+    void getPoints();
+
     //This method includes triangulation of cylinder
     void triangulate();
 
     void getSTLfile();
+
+    void Rotate(const Point&, double);
 
     double getVolume(){
         if(r1() > r2()){

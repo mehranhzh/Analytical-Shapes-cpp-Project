@@ -36,6 +36,8 @@ public:
     std::vector<Point> Points;
     std::vector<Triangle> Triangles;
 
+    void getPoints();
+
     void triangulate();
 
     void getSTLfile();
