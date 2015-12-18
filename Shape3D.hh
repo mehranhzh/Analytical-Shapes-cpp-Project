@@ -6,7 +6,7 @@
 
 class Shape3D : public Shape{
 public:
-    Shape3D() {};//Constructor 3D
+    Shape3D() {}//Constructor 3D
     ~Shape3D(){}//Destructor
     
 
