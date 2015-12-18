@@ -1,85 +1,85 @@
 solid Cube
-facet normal 0 0.5 -0.866025
+facet normal -0 -0 -1
 outer loop
-vertex 15 1.83013 6.83013
-vertex 15 6.16025 9.33013
-vertex 10 6.16025 9.33013
+vertex 15 5 5
+vertex 15 10 5
+vertex 10 10 5
 endloop
 endfacet
-facet normal 2.94903e-017 0.5 -0.866025
+facet normal 0 0 -1
 outer loop
-vertex 15 1.83013 6.83013
-vertex 10 6.16025 9.33013
-vertex 10 1.83013 6.83013
-endloop
-endfacet
-facet normal -1 0 0
-outer loop
-vertex 15 6.16025 9.33013
-vertex 15 -0.669873 11.1603
-vertex 15 1.83013 6.83013
-endloop
-endfacet
-facet normal -1 0 -0
-outer loop
-vertex 15 6.16025 9.33013
-vertex 15 3.66025 13.6603
-vertex 15 -0.669873 11.1603
-endloop
-endfacet
-facet normal -5.86337e-018 -0.866025 -0.5
-outer loop
-vertex 10 6.16025 9.33013
-vertex 15 3.66025 13.6603
-vertex 15 6.16025 9.33013
-endloop
-endfacet
-facet normal 0 -0.866025 -0.5
-outer loop
-vertex 10 6.16025 9.33013
-vertex 10 3.66025 13.6603
-vertex 15 3.66025 13.6603
+vertex 15 5 5
+vertex 10 10 5
+vertex 10 5 5
 endloop
 endfacet
 facet normal -1 0 0
 outer loop
-vertex 10 1.83013 6.83013
-vertex 10 3.66025 13.6603
-vertex 10 -0.669873 11.1603
+vertex 15 10 5
+vertex 15 5 10
+vertex 15 5 5
+endloop
+endfacet
+facet normal -1 -0 -0
+outer loop
+vertex 15 10 5
+vertex 15 10 10
+vertex 15 5 10
+endloop
+endfacet
+facet normal 0 -1 -0
+outer loop
+vertex 10 10 5
+vertex 15 10 10
+vertex 15 10 5
+endloop
+endfacet
+facet normal 0 -1 0
+outer loop
+vertex 10 10 5
+vertex 10 10 10
+vertex 15 10 10
 endloop
 endfacet
 facet normal -1 -0 0
 outer loop
-vertex 10 1.83013 6.83013
-vertex 10 6.16025 9.33013
-vertex 10 3.66025 13.6603
+vertex 10 5 5
+vertex 10 10 10
+vertex 10 5 10
 endloop
 endfacet
-facet normal -0 0.866025 0.5
+facet normal -1 0 0
 outer loop
-vertex 15 -0.669873 11.1603
-vertex 10 1.83013 6.83013
-vertex 15 1.83013 6.83013
+vertex 10 5 5
+vertex 10 10 5
+vertex 10 10 10
 endloop
 endfacet
-facet normal -0 0.866025 0.5
+facet normal 0 1 0
 outer loop
-vertex 15 -0.669873 11.1603
-vertex 10 -0.669873 11.1603
-vertex 10 1.83013 6.83013
+vertex 15 5 10
+vertex 10 5 5
+vertex 15 5 5
 endloop
 endfacet
-facet normal 0 0.5 -0.866025
+facet normal -0 1 0
 outer loop
-vertex 15 3.66025 13.6603
-vertex 10 -0.669873 11.1603
-vertex 15 -0.669873 11.1603
+vertex 15 5 10
+vertex 10 5 10
+vertex 10 5 5
 endloop
 endfacet
-facet normal 0 0.5 -0.866025
+facet normal 0 0 -1
 outer loop
-vertex 15 3.66025 13.6603
-vertex 10 3.66025 13.6603
-vertex 10 -0.669873 11.1603
+vertex 15 10 10
+vertex 10 5 10
+vertex 15 5 10
+endloop
+endfacet
+facet normal 0 0 -1
+outer loop
+vertex 15 10 10
+vertex 10 10 10
+vertex 10 5 10
 endloop
 endfacet

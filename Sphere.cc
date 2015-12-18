@@ -41,6 +41,7 @@ void Sphere::triangulate() {
 }
 
 void Sphere::getSTLfile() {
+
         ofstream file("Sphere.stl");
         file << "solid" << ' ' << "Sphere" << '\n';
 

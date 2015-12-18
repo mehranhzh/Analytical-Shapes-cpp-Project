@@ -4,8 +4,10 @@
 #include "Circle.hh"
 
 class Cylinder : public Circle{
+
 private:
     double height, radius;
+
 public:
     Cylinder(double x, double y, double r, double h) : Circle(x, y, r) { height = h > 0 ? h : 0; };
     //double getR() const { return radius; };

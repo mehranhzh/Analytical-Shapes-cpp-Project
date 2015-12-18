@@ -1,3 +1,4 @@
+//Author: Mehran Hosseinzadeh, Yu Hongshen
 #include "Cube.hh"
 
 void Cube::getPoints() {

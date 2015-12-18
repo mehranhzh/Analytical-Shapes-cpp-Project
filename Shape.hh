@@ -7,8 +7,10 @@
 
 
 class Shape {//abstract class shape
+private:
+    Point p;
 public:
-    Shape(){}//Constructor Shape
+    Shape(const Point& P): p(p){}//Constructor Shape
     virtual void moveTo(double x1, double y1, double z1)=0;//pure virtual function that move position to new position
     virtual bool isInside(double x1, double y1, double z1) = 0; //check if point is inside of Shape or not
     virtual double area() const = 0;//calculate the area of shapes

@@ -4,8 +4,10 @@
 #include "Point.hh"
 
 class Rectangle: public Point{
+
 private:
     double width, height;
+
 public:
     Rectangle(double x, double y, double w, double h) : Point(x, y, 0) { width = w; height= h; };
     double getW() const { return width; };
