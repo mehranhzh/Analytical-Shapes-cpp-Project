@@ -1,4 +1,4 @@
-//Author:Mehran, Hongshen
+//Author: Yu Hongshen, Mehran Hosseinzadeh
 #include "Point.hh"
 #include "Cube.cc"
 #include "Cylinder.cc"
