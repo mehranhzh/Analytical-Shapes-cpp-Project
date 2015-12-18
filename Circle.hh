@@ -19,34 +19,33 @@ private:
     Point p;
 
 public:
-    Circle(const Point& p, double r) : p(p) { radius = r; }
+    Circle(const Point& p, double r) : p(p) { radius = r; }//Constructor
 
-    double getR() const { return radius; }
+    double getR() const { return radius; }//Getting Radius
 
-    void setR(double r){ radius = r; }
+    void setR(double r){ radius = r; }//Setting Radius
 
-    const Point& center() const {return p;}
+    const Point& center() const {return p;}//Returning center point
 
-    double area() const { return PI*radius*radius; }
+    double area() const { return PI*radius*radius; }//Returning Circle area
 
-    void printShapeName() const { cout << "Circle: "; }
+    void printShapeName() const { cout << "Circle: "; }//Printing Shape Name
 
-    friend ostream& operator <<(ostream& os, const Circle& c){
+    friend ostream& operator <<(ostream& os, const Circle& c){// Operator overloading
         return os << "Center= " << "(" << c.center().x()<< "," << c.center().y() << "); Radius= " << c.radius; // Center= (x,y); Radius=
     }
 
-std::vector<Point> Points;
-//std::vector<Triangle> Triangles;
+std::vector<Point> Points;//Defining points as vector
 
 void getPoints(){
 
     double r = getR();
-    int perDegree = 18;
-    double theta = PI / 180 * perDegree;
-    int triCount = 360 / perDegree;
+    int perDegree = 18;//Deviding a circle to 20 pieces
+    double theta = PI / 180 * perDegree;//converting theta to radian
+    int triCount = 360 / perDegree;//calculate degree for each part
 
     for(int i = 0; i < triCount; i++)
-        Points.push_back(Point(r*cos(i*theta)+center().x(), r*sin(i*theta)+center().y(), 0));
+        Points.push_back(Point(r*cos(i*theta)+center().x(), r*sin(i*theta)+center().y(), 0));//push points regarding formula to get x,y
 
     Points.push_back(center());
 
@@ -54,7 +53,7 @@ void getPoints(){
 
 void getSTLfile() {
 
-    ofstream file("Circle.stl");
+    ofstream file("Circle.stl");//write STL file
     file << "solid" << ' ' << "Circle" << '\n';
 
     //calculate upper and lower facets
