@@ -8,11 +8,7 @@
 class Shape2D : public Shape{
 public:
     Shape2D() {}//Constructor 2D with z_=0
-    //double getX(), getY();//get position x,y,z
-    //void setX(double x1);//set position x
-    //void setY(double y1);//set position y
-    //virtual double area() const;//calculate the area of shapes
-    //virtual double perimeter() const;//calculate the perimeter of shapes
+    ~Shape2D(){}//Destructor
 
 
 
