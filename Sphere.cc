@@ -1,7 +1,6 @@
 #include "Sphere.hh"
 
-void Sphere::getSTLfile() {
-
+void Sphere::triangulate() {
         double a = center().x();
         double b = center().y();
         double c = center().z();
@@ -29,11 +28,16 @@ void Sphere::getSTLfile() {
             } else
                 continue;
         }
-        for(int i = 187, j = 0; i < Points.size(), j <= 10; i++, j++){
-            Triangles.push_back(Triangle(Points[i], Points[i+1], Points[j+1]));
-            Triangles.push_back(Triangle(Points[i], Points[j+1], Points[j]));
+        for(int i = 187, j = 0; i < Points.size(), j < 10; i++, j++){
+            if(Points[i] != Point(center().x(), center().y(), center().z()-r)){
+                Triangles.push_back(Triangle(Points[i], Points[i+1], Points[j+1]));
+                Triangles.push_back(Triangle(Points[i], Points[j+1], Points[j]));
+            } else
+                continue;
         }
+}
 
+void Sphere::getSTLfile() {
         ofstream file("Sphere.stl");
         file << "solid" << ' ' << "Sphere" << '\n';
 

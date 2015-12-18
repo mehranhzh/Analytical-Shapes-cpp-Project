@@ -43,6 +43,8 @@ public:
     std::vector<Triangle> Triangles;
 
     //This method includes triangulation of cylinder
+    void triangulate();
+
     void getSTLfile();
 
     double getVolume(){

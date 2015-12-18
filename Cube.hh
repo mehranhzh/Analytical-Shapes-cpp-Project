@@ -8,7 +8,10 @@
 #include <fstream>
 #include "Point.hh"
 #include "Triangle.hh"
+#include "GeometryTransform.hh"
 using namespace std;
+
+extern double PI;
 
 class Cube{
 private:
@@ -33,7 +36,11 @@ public:
     std::vector<Point> Points;
     std::vector<Triangle> Triangles;
 
+    void triangulate();
+
     void getSTLfile();
+
+    void Rotate(const Point&, double);
 
     double getVolume(){
         return a()*b()*c();

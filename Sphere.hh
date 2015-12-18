@@ -43,6 +43,8 @@ public:
 
     //this is the triangulation of a sphere, but without test
     //a more universal way to triangulate is now developing
+    void triangulate();
+
     void getSTLfile();
 
     double getVolume(){return PI*radius()*radius()*radius()*4/3;}

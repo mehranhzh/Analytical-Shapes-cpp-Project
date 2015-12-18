@@ -58,10 +58,10 @@ public:
         origin_(Point(0,0,0)), vector_(vec), radians_(radians){}
     RotateTransform(const Point& center, const Point& vec, double radians):
         origin_(center), vector_(vec), radians_(radians){}
-    virtual ~RotateTransform(){}
+    ~RotateTransform(){}
 
     //calculate the coordinate of a point after its rotation
-    virtual Point Transform(const Point& input){
+    Point Transform(const Point& input){
         Point copy_ = input;
         copy_.sub(origin_); //make input into a vector
         copy_.RotateAround(vector_, radians_); //rotate
