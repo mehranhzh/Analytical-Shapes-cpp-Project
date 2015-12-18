@@ -6,13 +6,9 @@
 
 class Shape3D : public Shape{
 public:
-    //Shape3D(double x2, double y2, double z2) : Shape(Point(x2, y2, z2)) {};//Constructor 3D
-    double getX(), getY(), getZ();//get position x,y,z
-    void setX(double x1);//set position x
-    void setY(double y1);//set position y
-    void setZ(double z1);//set position z
-    virtual double area() const = 0;//calculate the area of shapes
-    virtual void volume()=0;//draw graphs or shapes
+    Shape3D() {};//Constructor 3D
+    ~Shape3D(){}//Destructor
+    
 
 
 
