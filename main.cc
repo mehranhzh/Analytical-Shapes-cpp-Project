@@ -37,6 +37,8 @@ int main(){
 
 
 
-    //Circle circle(Point(10,10,0), 10);
+    Circle circle(Point(10,10,0), 10);
+    circle.getPoints();
+    circle.getSTLfile();
 
 }
