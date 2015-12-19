@@ -15,7 +15,7 @@ double PI = 3.14159265358979323846;
 int main(){
 
     //get a cylinder rotated based on vector(0,1,0), 75 degrees
-    Cylinder c(0, 5, 5, Point(10, 10, 10));
+    Cylinder c(10, 5, 5, Point(10, 10, 10));
     c.getPoints();
     //c.Rotate(Point(1,1,0), 30);
     c.triangulate();
