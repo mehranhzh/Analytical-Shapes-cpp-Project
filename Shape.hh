@@ -8,7 +8,7 @@
 using namespace std;
 
 
-class Shape {//abstract class shape
+class Shape {
 public:
     Shape(){}//Constructor Shape
     virtual ~Shape(){};//Destructor
