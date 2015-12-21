@@ -11,7 +11,7 @@ using namespace std;
 class Shape {
 public:
     Shape(){}//Constructor Shape
-    virtual ~Shape(){};//Destructor
+    ~Shape(){};//Destructor
 
 };
 
